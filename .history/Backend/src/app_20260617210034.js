@@ -16,7 +16,7 @@ app.use(cookieParser());
 const corsOptions = {
   origin: true,
   credentials: true,
-};
+};;
 
 app.use(cors(corsOptions));
 
