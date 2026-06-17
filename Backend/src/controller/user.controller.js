@@ -106,13 +106,12 @@ const loginUser = async (req, res) => {
       { expiresIn: process.env.JWT_SECRET_EXPIRES_IN } // Add token expiration for better security
     );
 
-    const cookieOptions = {
-      httpOnly: true,
-      expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // Set cookie to expire in 1 day
-      sameSite: process.env.NODE_ENV == "Dev" ? "lax" : "none", // Set SameSite attribute for better security
-      secure: process.env.NODE_ENV == "Dev" ? false : true, // Set Secure attribute for better security
-    };
-    
+const cookieOptions = {
+  httpOnly: true,
+  secure: true,        // IMPORTANT for Render
+  sameSite: "none",    // IMPORTANT for cross-domain (Vercel + Render)
+  expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+};
 
     console.log("Login Successful");
     return res

@@ -9,7 +9,7 @@ import { isUserAvailable } from "../middleware/auth.js";
 
 const router = Router();
 
-router.get("/", isUserAvailable, start);
+router.get("/", start);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/logout", isUserAvailable, logoutUser);
