@@ -25,7 +25,6 @@ Built with a focus on **clean UI, scalable architecture, and production-level pr
 - TailwindCSS
 - Redux Toolkit
 - React Router
-- React Simple WYSIWYG Editor
 
 ### Backend
 - Node.js
